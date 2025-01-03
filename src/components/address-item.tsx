@@ -3,8 +3,8 @@ import { motion } from "motion/react"
 
 interface Props {
   item: {
+    value: string,
     label: string,
-    title: string,
     img: string,
   },
   isLastIndex: boolean,
@@ -19,11 +19,11 @@ export function AddressItem({ item, isLastIndex, flexDirection }: Props) {
       className="cursor-pointer address relative group font-medium"
     >
       <span className="text-black black">
-        {item.label}
+        {item.value}
         {flexDirection == 'row' && !isLastIndex && ','}
       </span>
       <span className="text-blue-700 blue">
-        {item.label}
+        {item.value}
         {flexDirection == 'row' && !isLastIndex && ','}
       </span>
       <div 
@@ -33,7 +33,7 @@ export function AddressItem({ item, isLastIndex, flexDirection }: Props) {
         )}
       >
         <img 
-          alt={item.title} 
+          alt={item.label} 
           src={item.img} 
           className="w-40 h-40 border-4 border-white -rotate-3 rounded-xl overflow-hidden"
         />
@@ -44,7 +44,7 @@ export function AddressItem({ item, isLastIndex, flexDirection }: Props) {
           flexDirection == 'row' && "group-hover:scale-100 group-hover:opacity-100 group-hover:translate-y-0"
         )}
       >
-        {item.title}
+        {item.label}
       </span>
     </motion.span>
   )

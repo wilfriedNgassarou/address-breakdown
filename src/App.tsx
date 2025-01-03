@@ -7,32 +7,32 @@ import { Credits } from "./components/credits";
 function App() {
   const addresses = [
     {
-      label: 'Deido Roundabout',
-      title: 'street',
+      value: 'Deido Roundabout',
+      label: 'street',
       img: 'street.webp'
     },
     {
-      label: 'Douala',
-      title: 'city',
+      value: 'Douala',
+      label: 'city',
       img: 'city.webp'
     },
     {
-      label: 'Littoral',
-      title: 'region',
+      value: 'Littoral',
+      label: 'region',
       img: 'region.webp'
     },
     {
-      label: '2450',
-      title: 'zip',
+      value: '2450',
+      label: 'zip',
       img: 'zip.webp'
     },
     {
-      label: 'Cameroon',
-      title: 'country',
+      value: 'Cameroon',
+      label: 'country',
       img: 'country.webp'
     },
   ]
-  const fullAddress = addresses.reduce((a, b) => ( a + `${b.label}, `), '').slice(0, -2) ;
+  const fullAddress = addresses.reduce((a, b) => ( a + `${b.value}, `), '').slice(0, -2) ;
   
   const [flexDirection, setFlexDirection] = useState<'row' | 'column'>('row')
 
@@ -60,7 +60,7 @@ function App() {
             className="flex items-center h-9 uppercase"
           >
             <span className="text-sm">
-              {item.title}
+              {item.label}
             </span>
           </span>
         ))}
